@@ -754,17 +754,6 @@
           </div>
     <div class="col-lg-7">
       <div id="alert" class="absolute block">
-        <?php 
-
-        if (isset($_GET['error'])) {
-          echo "ERROR". $_GET['error'];
-        }elseif (isset($_GET['success'])) {
-          echo "SUCCESS". $_GET['success'];
-        }elseif (isset($_GET['errorField'])) {
-          echo "ERROR". $_GET['errorField'];
-        }
-
-         ?>
        </div>
         <form action="process.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
             <div class="row gy-4">

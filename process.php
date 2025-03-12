@@ -9,7 +9,7 @@ require 'vendor/autoload.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['message']) ) {
-        header('Location: index.php?errorField=All fields are required');
+        header('Location: index.html?errorField=All fields are required');
     }else{
         $name = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
@@ -37,9 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->Body    = "Name: $name\nEmail: $email\nSubject: $subject\n\nMessage: $message\n";
 
             if ($mail->send()) {
-                header('Location:index.php?success="Message has been sent!"');
+                header('Location:index.html?success="Message has been sent!"');
             }else{
-                header('Location:index.php?error="Message has not been sent!"');
+                header('Location:index.html?error="Message has not been sent!"');
             }
 
         } catch (Exception $e) {
@@ -50,3 +50,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
  ?>
+         <?php 
+
+        if (isset($_GET['error'])) {
+          echo "ERROR". $_GET['error'];
+        }elseif (isset($_GET['success'])) {
+          echo "SUCCESS". $_GET['success'];
+        }elseif (isset($_GET['errorField'])) {
+          echo "ERROR". $_GET['errorField'];
+        }
+
+         ?>

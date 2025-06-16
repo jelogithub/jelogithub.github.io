@@ -142,12 +142,12 @@ h6 {
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
-/*.no-scroll {
+.no-scroll {
   overflow: hidden;
   overflow-y: hidden;
   overflow-x: hidden;
   height: 100%;
-}*/
+}
 .no-scroll::-webkit-scrollbar {
   display: none;
 }

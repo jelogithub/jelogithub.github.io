@@ -99,7 +99,24 @@
 
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="">
+            <div class="feature">
+
+            <!-- <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt=""> -->
+            <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+            <div class="computer-container">
+            <model-viewer
+              src="assets/3d/laptop.glb"
+              alt="Cute 3D Computer"
+              auto-rotate
+              rotation-per-second="10deg"
+              camera-controls
+              disable-zoom
+              shadow-intensity="1"
+              autoplay
+            ></model-viewer>
+          </div>
+          </div>
+
           </div>
           <div class="col-lg-8 content">
             <h2>Designer &amp; Web Developer.</h2>
@@ -118,14 +135,13 @@
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>23</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor's</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor's Degree</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>jelocuarteroramos@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
             </div>
             <p class="py-3">
-              I have a sharp eye for detail and I take pride in my skills, whether it’s handling data, communicating with clients, or thoroughly understanding complex information. I am committed to delivering precise and reliable results, ensuring clarity and efficiency in every task I take on.
+              Having a sharp eye for detail and taking pride in my skills, whether it’s handling data, communicating with clients, or thoroughly understanding complex information. committed to delivering precise and reliable results, ensuring clarity and efficiency in every task I take on.
             </p>
           </div>
         </div>
@@ -139,7 +155,7 @@
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
         <!-- <p>I've included some graphs to help you grasp my essential skills for your reference.</p> -->
-        <p>Here are some charts to help grasp my essential skills for reference.</p>
+        <p>Here are some charts to help grasp the essential skills for your reference.</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -206,7 +222,7 @@
 
       <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
-        <p>Keen to gain experience that not only pushes me to utilize my academic background, technical skills, and sincere passion for innovation, but also enables me to make valuable contributions to cutting-edge projects, network with peers in the same field, and consistently improve my capabilities in a vibrant and progressive setting.
+        <p>Keen to gain experience that not only pushes me to utilize my academic background, technical skills, and sincere passion for innovation, but also enables me to make valuable contributions to cutting-edge projects, network with peers in the same field, and consistently improve my capabilities in a vibrant and progressive setting, yet still eager to learn more and help with the company's growth.
 </p>
       </div>
 
@@ -228,7 +244,7 @@
               <h5>2020 - 2024</h5>
               <p><em>ACLC College of Balanga, INC</em></p>
               <p>I devoted myself to diligent work and education, where I gained knowledge in Web Development, and for my efforts, awarded as President's Lister, and graduated with the Cum Laude honor.</p>
-            </div><
+            </div>
 
             <div class="resume-item">
               <h4>Information & Communication Technology</h4>
@@ -546,6 +562,10 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <div class="cursor-circle"></div>
+
+  <script src="script.js"></script>
 
 </body>
 

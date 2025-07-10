@@ -1455,32 +1455,28 @@ iframe {
   pointer-events: auto;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .feature {
   position: relative;
-/*  padding: 2rem;*/
   background: #fff;
 }
 
-/* Wrap to reserve space */
 .dwrap {
   position: relative;
   width: 520px;
-  height: 520px; /* Match or exceed .computer-container height */
-/*  margin-top: 1rem;*/
+  height: 520px;
   overflow: hidden;
 }
 
-/* Floating 3D model */
 .computer-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 420px;
-/*  border: 1px solid black;*/
   height: 420px;
-/*  padding-left: 50px;*/
-/*  margin-right: -50px;*/
-/*  margin-top: -50px;*/
 }
 
 model-viewer {
@@ -1489,24 +1485,36 @@ model-viewer {
 /*  padding: 100px;*/
 }
 
-/* 📱 Mobile Rule: Fixed and Bottom Left */
-@media (max-width: 1000px) {
+@media (max-width: 1194px) {
   .computer-container {
-    position: fixed !important;  /* Force override */
-    bottom: 1rem !important;     /* Push to bottom */
-    left: 1rem !important;       /* Align left */
-    top: auto !important;        /* Cancel top */
-    right: auto !important;      /* Cancel right */
+    position: fixed !important;
+    bottom: 1rem !important;
+    left: auto !important;
+    top: auto !important;
+    right: 1rem !important;
     width: 140px;
     height: 140px;
+
     z-index: 9999;
-/*    pointer-events: none;*/
+    margin: -12px;
+    padding-top: 0px;
+    padding-bottom: 55px;
+    padding-right: 0px;
+    padding-left: 65px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
   }
 
+ .computer-container.invisible {
+    opacity: 0;
+  }
+  
   .dwrap {
-    height: 0; /* Prevents reserving empty vertical space */
+    height: 0;
   }
 }
+
+
 @media (max-width: 1366px) {
   .cursor-circle {
     display: none;

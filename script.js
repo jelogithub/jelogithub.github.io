@@ -50,23 +50,20 @@ document.addEventListener('touchend', () => {
   cursor.classList.remove('clicking');
 });
 
- document.addEventListener("DOMContentLoaded", function () {
+ window.addEventListener("load", function () {
     const computer = document.querySelector(".computer-container");
     const heroSection = document.querySelector("#hero");
 
     function handleScroll() {
       const heroBottom = heroSection.getBoundingClientRect().bottom;
 
-      // Adjust threshold for earlier reveal
       if (heroBottom <= window.innerHeight * 0.9) {
-        // Hero is mostly out of view
         computer.classList.remove("invisible");
       } else {
-        // Still near or inside hero
         computer.classList.add("invisible");
       }
     }
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
+    handleScroll(); // Initial check AFTER full load
   });

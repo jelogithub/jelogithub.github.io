@@ -1497,18 +1497,19 @@ model-viewer {
 
     z-index: 9999;
     margin: -12px;
-    padding-top: 0px;
-    padding-bottom: 55px;
-    padding-right: 0px;
-    padding-left: 65px;
+    padding-top: 65px;
+    padding-bottom: 0px;
+    padding-right: 35px;
+    padding-left: 0px;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+/*    pointer-events: none;*/
   }
 
  .computer-container.invisible {
     opacity: 0;
   }
-  
+
   .dwrap {
     height: 0;
   }
@@ -1519,4 +1520,11 @@ model-viewer {
   .cursor-circle {
     display: none;
   }
+}
+* {
+  cursor: default !important; /* or auto */
+}
+
+*:active {
+  cursor: default !important;
 }

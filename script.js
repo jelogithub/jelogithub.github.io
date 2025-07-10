@@ -13,6 +13,13 @@ document.addEventListener('mousemove', (e) => {
   mouseY = e.clientY;
 });
 
+document.addEventListener('touchmove', (e) => {
+  if (e.touches.length > 0) {
+    mouseX = e.touches[0].clientX;
+    mouseY = e.touches[0].clientY;
+  }
+}, { passive: true }); // passive improves performance
+
 function animateCircle() {
   circleX += (mouseX - circleX) * ease;
   circleY += (mouseY - circleY) * ease;
@@ -34,4 +41,11 @@ document.addEventListener('dragend', () => cursor.style.display = 'block');
 iframes.forEach(iframe => {
   iframe.addEventListener('mouseenter', () => cursor.style.display = 'none');
   iframe.addEventListener('mouseleave', () => cursor.style.display = 'block');
+});
+document.addEventListener('touchstart', () => {
+  cursor.classList.add('clicking');
+});
+
+document.addEventListener('touchend', () => {
+  cursor.classList.remove('clicking');
 });

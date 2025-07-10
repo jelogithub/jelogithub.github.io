@@ -1456,24 +1456,57 @@ iframe {
 }
 
 .feature {
-  position: relative; /* This becomes the positioning context */
-  padding: 2rem;
-  background: #ffff;
+  position: relative;
+/*  padding: 2rem;*/
+  background: #fff;
 }
 
+/* Wrap to reserve space */
+.dwrap {
+  position: relative;
+  width: 520px;
+  height: 520px; /* Match or exceed .computer-container height */
+/*  margin-top: 1rem;*/
+  overflow: hidden;
+}
+
+/* Floating 3D model */
 .computer-container {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 420px;
+/*  border: 1px solid black;*/
   height: 420px;
-/*  pointer-events: none;*/
+/*  padding-left: 50px;*/
+/*  margin-right: -50px;*/
+/*  margin-top: -50px;*/
 }
-model-viewer {
-      width: 100%;
-      height: 100%;
-    }
 
+model-viewer {
+  width: 100%;
+  height: 100%;
+/*  padding: 100px;*/
+}
+
+/* 📱 Mobile Rule: Fixed and Bottom Left */
+@media (max-width: 1000px) {
+  .computer-container {
+    position: fixed !important;  /* Force override */
+    bottom: 1rem !important;     /* Push to bottom */
+    left: 1rem !important;       /* Align left */
+    top: auto !important;        /* Cancel top */
+    right: auto !important;      /* Cancel right */
+    width: 140px;
+    height: 140px;
+    z-index: 9999;
+/*    pointer-events: none;*/
+  }
+
+  .dwrap {
+    height: 0; /* Prevents reserving empty vertical space */
+  }
+}
 @media (max-width: 1366px) {
   .cursor-circle {
     display: none;

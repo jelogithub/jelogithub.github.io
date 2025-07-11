@@ -877,6 +877,7 @@ section,
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
+/*  max-width: 40px;*/
 }
 
 .resume .resume-item {
@@ -1527,4 +1528,13 @@ model-viewer {
 
 *:active {
   cursor: default !important;
+}
+
+.pwidth {
+/*  text-align: justify;*/
+  max-width: 570px;
+}
+
+* {
+  text-align: justify;
 }
